@@ -1,3 +1,3 @@
 # PR Closer
 
-A little to for me to manage my github prs for work
+A little thing for me to manage my github prs for work
