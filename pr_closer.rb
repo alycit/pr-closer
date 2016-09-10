@@ -59,7 +59,7 @@ def process_prs(client, date)
         end
       end
     rescue Exception => e
-      abort "ABORTING: Unable to search for open PRs: #{e.message}"
+      abort "ABORTING: -Unable to search for open PRs: #{e.message}"
     end
   end
 end

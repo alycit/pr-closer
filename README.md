@@ -6,5 +6,5 @@ To run:
 
 ```bash
 > bundle
-> ruby pr-closer.rb
+> ruby pr_closer.rb
 ```
