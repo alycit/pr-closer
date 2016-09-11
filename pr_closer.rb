@@ -41,7 +41,7 @@ def close_pr(client, pr_url)
     puts "pr closed: #{pr_url}" if status.state == "closed"
     sleep 2 # just to hopefully not hit rate limit
   rescue Exception => e
-    puts "ABORTING: Unable to close #{pr_url}: #{e.message}"
+    puts "Unable to close #{pr_url}: #{e.message}"
   end
 end
 
