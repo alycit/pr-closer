@@ -39,7 +39,7 @@ def close_pr(client, pr_url)
   begin
     status = client.close_pull_request(match[1], match[2].to_i)
     puts "pr closed: #{pr_url}" if status.state == "closed"
-    sleep 1 # just to hopefully not hit rate limit
+    sleep 2 # just to hopefully not hit rate limit
   rescue Exception => e
     puts "ABORTING: Unable to close #{pr_url}: #{e.message}"
   end
@@ -48,6 +48,7 @@ end
 def process_prs(client, date)
   loop do
     begin
+      # search has a rate limit of 30 requests per minute https://developer.github.com/v3/search/
       items = client.search_issues("mentions:#{client.user.login} is:open is:pr created:<=#{date}", {order: "asc", sort: "created"}).items
       puts "No PRs to Process" if items.empty?
 
